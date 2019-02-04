@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <canvas></canvas>
+            <script>
+                const canvas = document.querySelector("canvas");
+                const context = canvas.getContext("2d");
+                const centerX = 100;
+                const centerY = 100;
+                const radius = 50;
+
+                context.moveTo(centerX, centerY);
+
+                for (let i = 0; i < 500; i++) {
+                    let angle = i * Math.PI / 50;
+                    let dist = radius * i / 500;
+                    let x = centerX + Math.cos(angle) * dist;
+                    let y = centerY + Math.sin(angle) * dist;
+                    context.lineTo(x, y);
+                }
+                context.stroke();
+            </script>
+        </body>
+</html>
