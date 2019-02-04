@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <canvas></canvas>
+            <script>
+                //a rectangle rotated 45 degrees or ¼π radians
+                let canvas = document.querySelector("canvas");
+                let context = canvas.getContext("2d");
+                let rib = 100;
+                
+                moveCoordinateSystem(rib);
+                paintRec(rib);
+               
+                function moveCoordinateSystem(rib){
+                    let topVertexPositionX = Math.pow((2*Math.pow(rib, 2)), 0.5)/2;
+                    context.translate(topVertexPositionX, 0);
+                    context.rotate(0.25*Math.PI);
+                };
+
+                function paintRec(rib){
+                    context.fillStyle = "red";
+                    context.fillRect(0, 0, rib, rib);
+                };
+
+            </script>
+        </body>
+</html>
+
+
+
