@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <canvas></canvas>
+            <script>
+                const canvas = document.querySelector("canvas");
+                const context = canvas.getContext("2d");
+                const centerX = 100;
+                const centerY = 100;
+                const radius = 50;
+                const numOfArches = 8;
+
+                context.moveTo(centerX, centerY);
+                
+                for (let i = 0; i <= numOfArches; i++) {
+                    let angle = i * Math.PI / 4;
+                    let x = centerX + Math.cos(angle) * radius;
+                    let y = centerY + Math.sin(angle) * radius;
+                    context.quadraticCurveTo(centerX, centerY, x, y);
+                }
+                context.fillStyle = "gold";
+                context.fill();
+            </script>
+        </body>
+</html>
